@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package clone_tts;
+
+service CloneTTSService {
+  rpc Synthesize (CloneInput) returns (CloneResponse) {};
+}
+
+
+message CloneInput {
+  string text = 1;
+  bytes ref_speech = 2;
+}
+
+
+message CloneResponse {
+  bytes speech = 1;
+}
